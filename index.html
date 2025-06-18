@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- 核心SEO标签 -->
-    <title>文本转语音 | 免费在线TTS转换工具 - MiaoTTS</title>
-    <meta name="description" content="MiaoTTS 是一款免费的在线文本转语音工具，支持多种声音选择，可调节语速和语调，提供即时试听和下载功能。快速将文字转换成自然流畅的语音。MiaoTTS是免费的文本转语音工具，提供语音合成服务，支持多种语言，包括英语、法语、德语、西班牙语、阿拉伯语、中文、日语、朝鲜语、粤语、越南语等，以及多种语音风格，提供丰富的讲述人。MiaoTTS is an online text-to-speech tool, also known as a voice generator, it can convert text to audio, and you can play or download audio files. Free online text-to-speech converter supporting multiple voices, adjustable speed and pitch, with instant preview and download features.">
-    <meta name="keywords" content="文本转语音,TTS,语音合成,在线配音,OpenAI 文本转语音,OpenAI,AI,讲述人,FREE TTS,文字转语音,语音生成器,AI配音,免费TTS,在线朗读,文案工具">
+    <title>免费在线文本转语音工具 - MiaoTTS，支持多语言多风格</title>
+    <meta name="description" content="MiaoTTS是一款免费在线文本转语音工具，支持超300种语言和口音，可调节语速语调，实时预览并下载音频，还具备历史记录和自定义API功能。">
+    <meta name="keywords" content="文本转语音,TTS,语音合成,在线配音,OpenAI文本转语音,免费TTS,语音生成器,AI配音,多语言语音合成">
     <meta name="author" content="Zwei">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://miaotts.pages.dev/">
     
     <!-- Open Graph标签增强 -->
-    <meta property="og:title" content="文本转语音 | 免费在线TTS转换工具 - MiaoTTS">
-    <meta property="og:description" content="MiaoTTS 是一款免费的在线文本转语音工具，支持多种声音选择，可调节语速和语调，提供即时试听和下载功能。快速将文字转换成自然流畅的语音。MiaoTTS是免费的文本转语音工具，提供语音合成服务，支持多种语言，包括英语、法语、德语、西班牙语、阿拉伯语、中文、日语、朝鲜语、粤语、越南语等，以及多种语音风格，提供丰富的讲述人。MiaoTTS is an online text-to-speech tool, also known as a voice generator, it can convert text to audio, and you can play or download audio files. Free online text-to-speech converter supporting multiple voices, adjustable speed and pitch, with instant preview and download features.">
+    <meta property="og:title" content="免费在线文本转语音工具 - MiaoTTS，支持多语言多风格">
+    <meta property="og:description" content="MiaoTTS是一款免费在线文本转语音工具，支持超300种语言和口音，可调节语速语调，实时预览并下载音频，还具备历史记录和自定义API功能。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://miaotts.pages.dev/">
     <meta property="og:image" content="image/TTS.png">
@@ -23,14 +23,61 @@
     
     <!-- Twitter Card标签增强 -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="文本转语音 | 免费在线TTS转换工具 - MiaoTTS">
-    <meta name="twitter:description" content="MiaoTTS是一款免费的在线文本转语音工具,支持多种声音选择,可调节语速和语调,提供即时试听和下载功能。">
+    <meta name="twitter:title" content="免费在线文本转语音工具 - MiaoTTS，支持多语言多风格">
+    <meta name="twitter:description" content="MiaoTTS是一款免费在线文本转语音工具，支持多种声音选择，可调节语速和语调，提供即时试听和下载功能。">
     <meta name="twitter:image" content="/image/TTS.png">
     
-    <!-- 其他原有标签 -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                },
+            }
+        }
+    </script>
+    
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-gradient {
+                background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            }
+            .header-gradient {
+                background: linear-gradient(145deg, #3B82F6 0%, #2563EB 100%);
+            }
+            .glass-effect {
+                backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+        }
+    </style>
     
     <!-- 网站图标 -->
     <link rel="icon" type="image/png" href="image/TTS.png">
@@ -38,335 +85,435 @@
     <link rel="shortcut icon" type="image/png" href="image/TTS.png">
 
     <!-- 建议添加预加载关键资源 -->
-    <link rel="preload" href="style.css" as="style">
     <link rel="preload" href="script.js" as="script">
     
     <!-- Umami Analytics -->
     <script defer src="https://umami.zwei.de.eu.org/script.js" data-website-id="70106ca4-d1e5-4563-b574-ba09c3b5db16"></script>
 </head>
-<body>
-    <!-- 新增：密码验证弹窗 -->
-    <div id="passwordModal" class="modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:1000;">
-        <div class="modal-dialog" style="max-width: 400px; margin: 15% auto;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">请输入访问密码</h5>
-                </div>
-                <div class="modal-body">
-                    <input type="password" id="passwordInput" class="form-control" placeholder="密码">
-                    <div id="passwordError" class="alert alert-danger mt-2" style="display:none;"></div>
-                </div>
-                <div class="modal-footer">
-                    <button id="passwordSubmit" class="btn btn-primary">提交</button>
-                </div>
+<body class="font-inter bg-gray-50 text-gray-800 min-h-screen">
+    <!-- 顶部导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200 transition-all duration-300" id="mainNav">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-volume-up text-primary text-2xl"></i>
+                <span class="font-bold text-xl text-dark">MiaoTTS</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors">主页</a>
+                <a href="#features" class="text-gray-600 font-medium hover:text-primary transition-colors">功能</a>
+                <a href="#guide" class="text-gray-600 font-medium hover:text-primary transition-colors">使用指南</a>
+                <a href="#faq" class="text-gray-600 font-medium hover:text-primary transition-colors">常见问题</a>
+            </div>
+            <button class="md:hidden text-gray-600" id="mobileMenuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#" class="text-primary font-medium py-2 hover:bg-gray-50 rounded">主页</a>
+                <a href="#features" class="text-gray-600 font-medium py-2 hover:bg-gray-50 rounded">功能</a>
+                <a href="#guide" class="text-gray-600 font-medium py-2 hover:bg-gray-50 rounded">使用指南</a>
+                <a href="#faq" class="text-gray-600 font-medium py-2 hover:bg-gray-50 rounded">常见问题</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- 添加结构化数据 -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "MiaoTTS - 文本转语音工具",
-        "url": "https://miaotts.pages.dev/",
-        "description": "免费在线文本转语音工具,支持多种声音选择,可调节语速和语调,提供即时试听和下载功能。",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "All",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Zwei"
-        }
-    }
-    </script>
-
-    <div class="container-fluid d-flex flex-column justify-content-center align-items-center mt-5" style="min-height: 90vh;">
-        <div class="row w-100 justify-content-center g-4">
-            <!-- 表单容器 -->
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5 mb-3">
-                <div class="card shadow-sm h-100">
-                    <div class="card-header text-center">
-                        <h2>喵文本转语音</h2>
+    <!-- 主要内容区 -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <!-- 英雄区 -->
+        <section class="mb-16 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark mb-6 leading-tight">
+                    将文本转换为自然流畅的语音
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] text-gray-600 mb-8 text-balance">
+                    MiaoTTS 是一款强大的文本转语音工具，支持多语言、多风格，为您提供高质量的语音合成体验。
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                    <a href="#converter" class="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        立即使用 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#features" class="px-6 py-3 bg-white hover:bg-gray-50 text-primary border border-primary font-medium rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        了解更多 <i class="fa fa-info-circle ml-2"></i>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-gray-500">
+                    <div class="flex items-center">
+                        <i class="fa fa-globe mr-2"></i>
+                        <span>300+ 语言</span>
                     </div>
-                    <div class="card-body">
-                        <form id="text2voice-form">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="api">选择API：</label>
-                                    <div class="input-group">
-                                        <select class="form-control" id="api" required>
-                                            <option value="edge-api">Edge API</option>
-                                            <option value="oai-tts">OAI-TTS API</option>
-                                            <!-- 自定义API选项将通过JS动态添加 -->
+                    <div class="flex items-center">
+                        <i class="fa fa-microphone mr-2"></i>
+                        <span>多种声音风格</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa fa-sliders mr-2"></i>
+                        <span>语速语调调节</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa fa-download mr-2"></i>
+                        <span>高清音频导出</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 转换器区域 -->
+        <section id="converter" class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <!-- 转换表单 -->
+                <div class="lg:col-span-3">
+                    <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden">
+                        <div class="header-gradient px-6 py-4 text-white">
+                            <h2 class="text-xl font-bold flex items-center">
+                                <i class="fa fa-magic mr-2"></i>
+                                文本转语音转换器
+                            </h2>
+                        </div>
+                        <div class="p-6">
+                            <form id="text2voice-form">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                    <div>
+                                        <label for="api" class="block text-sm font-medium text-gray-700 mb-1">选择API</label>
+                                        <div class="relative">
+                                            <select class="form-select w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" id="api" required>
+                                                <option value="edge-api">Edge API</option>
+                                                <option value="oai-tts">OAI-TTS API</option>
+                                                <!-- 自定义API选项将通过JS动态添加 -->
+                                            </select>
+                                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                                <i class="fa fa-cog text-gray-500"></i>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="text-primary text-sm mt-1 hover:underline" id="manageApiBtn">
+                                            管理API <i class="fa fa-chevron-right ml-1 text-xs"></i>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <label for="speaker" class="block text-sm font-medium text-gray-700 mb-1">选择语音</label>
+                                        <select class="form-select w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" id="speaker" required>
+                                            <option value="">加载中...</option>
                                         </select>
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="manageApiBtn">
-                                                <i class="fas fa-cog"></i>
+                                    </div>
+                                </div>
+
+                                <div class="mb-6">
+                                    <label for="text" class="block text-sm font-medium text-gray-700 mb-1">输入文本</label>
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                                        <div class="flex items-center gap-2 mb-2 sm:mb-0">
+                                            <span class="text-xs text-gray-500">文本长度:</span>
+                                            <span id="charCount" class="text-xs font-medium text-gray-700">0% (0/100000单位)</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <button type="button" class="px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-md transition-colors" id="clearTextBtn">
+                                                <i class="fa fa-eraser mr-1"></i> 清空
+                                            </button>
+                                            <button type="button" class="px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-md transition-colors" id="sampleTextBtn">
+                                                <i class="fa fa-file-text-o mr-1"></i> 示例
                                             </button>
                                         </div>
                                     </div>
-                                    <small id="apiTips" class="form-text text-muted"></small>
+                                    <div class="relative">
+                                        <textarea
+                                            class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
+                                            id="text"
+                                            rows="6"
+                                            required
+                                            maxlength="100000"
+                                            placeholder="请输入要转换为语音的文本...">
+                                        </textarea>
+                                        <div class="absolute bottom-3 right-3 flex items-center gap-2">
+                                            <button type="button" class="p-1.5 text-gray-500 hover:text-primary rounded-full hover:bg-gray-100 transition-colors" id="copyTextBtn" title="复制文本">
+                                                <i class="fa fa-copy"></i>
+                                            </button>
+                                            <button type="button" class="p-1.5 text-gray-500 hover:text-primary rounded-full hover:bg-gray-100 transition-colors" id="pasteTextBtn" title="粘贴文本">
+                                                <i class="fa fa-paste"></i>
+                                            </button>
+                                            <button type="button" class="p-1.5 text-gray-500 hover:text-primary rounded-full hover:bg-gray-100 transition-colors" id="expandTextBtn" title="展开文本框">
+                                                <i class="fa fa-expand"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="speaker">选择语音：</label>
-                                    <select class="form-control" id="speaker" required>
-                                        <option value="">加载中...</option>
+
+                                <!-- OAI-TTS专用设置 -->
+                                <div id="instructionsContainer" class="mb-6 hidden">
+                                    <label for="instructions" class="block text-sm font-medium text-gray-700 mb-1">语音指令（可选）</label>
+                                    <input type="text" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" id="instructions" 
+                                        placeholder="如：请用欢快和兴奋的语气说话">
+                                    <p class="text-xs text-gray-500 mt-1">可用于指导语音情感、语气或风格</p>
+                                </div>
+
+                                <div id="formatContainer" class="mb-6 hidden">
+                                    <label for="audioFormat" class="block text-sm font-medium text-gray-700 mb-1">音频格式</label>
+                                    <select class="form-select w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" id="audioFormat">
+                                        <option value="mp3">MP3</option>
+                                        <option value="opus">Opus</option>
+                                        <option value="aac">AAC</option>
+                                        <option value="flac">FLAC</option>
+                                        <option value="wav">WAV</option>
+                                        <option value="pcm">PCM</option>
                                     </select>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <label for="text">输入文本：</label>
-                                    <div id="pauseControls" class="input-group" style="width: auto;">
-                                        <input type="number"
-                                               class="form-control form-control-sm"
-                                               id="pauseSeconds"
-                                               min="0.01"
-                                               max="100"
-                                               step="0.01"
-                                               style="width: 80px;"
-                                               placeholder="秒数">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-sm btn-outline-secondary" type="button" id="insertPause">
-                                                插入停顿
-                                            </button>
+                                <!-- 语速语调设置 -->
+                                <div class="mb-6">
+                                    <h3 class="text-sm font-medium text-gray-700 mb-3">语音设置</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <div class="flex justify-between items-center mb-1">
+                                                <label for="rate" class="text-xs text-gray-600">语速</label>
+                                                <span id="rateValue" class="text-xs font-medium text-gray-700">0</span>
+                                            </div>
+                                            <input type="range" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" id="rate" name="rate" min="-100" max="100" value="0">
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between items-center mb-1">
+                                                <label for="pitch" class="text-xs text-gray-600">语调</label>
+                                                <span id="pitchValue" class="text-xs font-medium text-gray-700">0</span>
+                                            </div>
+                                            <input type="range" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" id="pitch" name="pitch" min="-100" max="100" value="0">
                                         </div>
                                     </div>
                                 </div>
-                                <textarea
-                                    class="form-control"
-                                    id="text"
-                                    rows="4"
-                                    required
-                                    maxlength="100000"></textarea>
-                                <small id="charCount" class="form-text text-muted">0% (0/100000单位)</small>
-                            </div>
 
-                            <!-- OAI-TTS专用设置 -->
-                            <div id="instructionsContainer" class="form-group" style="display: none;">
-                                <label for="instructions">语音指令（可选）：</label>
-                                <input type="text" class="form-control" id="instructions" 
-                                    placeholder="如：请用欢快和兴奋的语气说话">
-                                <small class="form-text text-muted">可用于指导语音情感、语气或风格</small>
-                            </div>
+                                <div id="error" class="mb-4 bg-red-50 border-l-4 border-red-400 p-4 hidden">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fa fa-exclamation-triangle text-red-500"></i>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm text-red-700" id="errorMessage"></p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div id="formatContainer" class="form-group" style="display: none;">
-                                <label for="audioFormat">音频格式：</label>
-                                <select class="form-control" id="audioFormat">
-                                    <option value="mp3">MP3</option>
-                                    <option value="opus">Opus</option>
-                                    <option value="aac">AAC</option>
-                                    <option value="flac">FLAC</option>
-                                    <option value="wav">WAV</option>
-                                    <option value="pcm">PCM</option>
-                                </select>
-                            </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <button type="button" class="px-6 py-3 bg-info hover:bg-info/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center" id="previewButton">
+                                        <i class="fa fa-play mr-2"></i> 试听前20个字
+                                    </button>
+                                    <button type="button" class="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center" id="generateButton">
+                                        <i class="fa fa-magic mr-2"></i> 生成语音
+                                    </button>
+                                </div>
+                            </form>
 
-                            <!-- 其他API使用的语速语调设置 -->
-                            <div id="rateContainer" class="form-group">
-                                <label for="rate">语速: <span id="rateValue">0</span></label>
-                                <input type="range" class="form-control-range" id="rate" name="rate" min="-100" max="100" value="0">
-                            </div>
+                            <div class="mt-6">
+                                <div id="result" class="hidden">
+                                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <h3 class="text-sm font-medium text-gray-700">生成的语音</h3>
+                                            <div class="flex gap-2">
+                                                <button type="button" class="p-1.5 text-gray-500 hover:text-primary rounded-full hover:bg-gray-100 transition-colors" id="saveAudioBtn" title="保存音频">
+                                                    <i class="fa fa-download"></i>
+                                                </button>
+                                                <button type="button" class="p-1.5 text-gray-500 hover:text-primary rounded-full hover:bg-gray-100 transition-colors" id="shareAudioBtn" title="分享音频">
+                                                    <i class="fa fa-share-alt"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <audio id="audio" controls class="w-full"></audio>
+                                    </div>
+                                    <div class="mt-4 flex justify-between items-center">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-xs text-gray-500">音频格式:</span>
+                                            <span id="audioFormatDisplay" class="text-xs font-medium text-gray-700">MP3</span>
+                                        </div>
+                                        <a id="download" class="px-4 py-2 bg-secondary hover:bg-secondary/90 text-white text-sm font-medium rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 flex items-center" href="#" download="voice.mp3">
+                                            <i class="fa fa-download mr-2"></i> 下载音频
+                                        </a>
+                                    </div>
+                                </div>
 
-                            <div id="pitchContainer" class="form-group">
-                                <label for="pitch">语调: <span id="pitchValue">0</span></label>
-                                <input type="range" class="form-control-range" id="pitch" name="pitch" min="-100" max="100" value="0">
-                            </div>
-
-                            <div id="error" class="alert alert-danger" style="display: none;"></div>
-
-                            <button type="button" class="btn btn-info btn-block mb-3" id="previewButton">试听前20个字</button>
-                            <button type="button" class="btn btn-primary btn-block" id="generateButton">生成语音</button>
-                        </form>
-
-                        <div class="mt-4" id="result">
-                            <audio id="audio" controls class="w-100"></audio>
-                            <a id="download" class="btn btn-success btn-block mt-3" href="#" download="voice.mp3">下载语音文件</a>
-                        </div>
-
-                        <div class="mt-4 text-center" id="loading" style="display: none;">
-                            <i class="fas fa-spinner fa-spin"></i> 正在生成语音，请稍候...
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 历史记录容器 -->
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5 mb-3">
-                <div class="card shadow-sm h-100">
-                    <div class="card-header text-center">
-                        <h2>历史记录</h2>
-                    </div>
-                    <div class="card-body history-container">
-                        <button onclick="clearHistory()" class="btn btn-warning btn-block mb-3">清除历史</button>
-                        <div id="historyItems"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 添加自定义API管理弹窗 -->
-    <div class="modal fade" id="apiManagerModal" tabindex="-1" role="dialog" aria-labelledby="apiManagerModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="apiManagerModalLabel">管理自定义API</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i> 您可以添加自定义的TTS API。支持两种格式：OpenAI格式和Edge API格式。
-                    </div>
-                    
-                    <form id="customApiForm">
-                        <div class="form-group">
-                            <label for="apiName">API名称 <small class="text-muted">(显示在下拉菜单中)</small></label>
-                            <input type="text" class="form-control" id="apiName" placeholder="例如: 我的自定义API" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="apiFormat">API格式</label>
-                            <select id="apiFormat" class="form-control">
-                                <option value="openai">OpenAI 格式</option>
-                                <option value="edge">Edge API 格式</option>
-                            </select>
-                            <small class="form-text text-muted">选择您的API所使用的格式，这将影响请求的参数格式</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="apiEndpoint">API端点URL</label>
-                            <input type="url" class="form-control" id="apiEndpoint" placeholder="https://api.example.com/v1/audio/speech" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="apiKey">API密钥 <small class="text-muted">(可选)</small></label>
-                            <input type="password" class="form-control" id="apiKey" placeholder="sk-...">
-                            <small class="form-text text-muted">对于OpenAI格式，使用Bearer Token；对于Edge API格式，可以使用"x-api-key: 值"或Bearer Token</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="modelEndpoint">模型列表端点 <small class="text-muted">(用于获取可用的模型/讲述人)</small></label>
-                            <div class="input-group">
-                                <input type="url" class="form-control" id="modelEndpoint" placeholder="https://api.example.com/v1/models">
-                                <div class="input-group-append">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button" id="fetchModelsBtn">获取模型</button>
+                                <div class="mt-4 text-center" id="loading" class="hidden">
+                                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 animate-spin">
+                                        <i class="fa fa-spinner fa-spin text-primary"></i>
+                                    </div>
+                                    <p class="mt-2 text-sm font-medium text-gray-500">正在生成语音，请稍候...</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="manualSpeakers">自定义讲述人列表 <small class="text-muted">(逗号分隔)</small></label>
-                            <textarea id="manualSpeakers" class="form-control" rows="2" placeholder="voice1,voice2,voice3"></textarea>
-                            <small class="form-text text-muted">如果无法自动获取模型，您可以手动输入讲述人列表</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="maxLength">最大请求长度</label>
-                            <input type="number" id="maxLength" class="form-control" placeholder="例如: 5000">
-                            <small class="form-text text-muted">此 API 文本最大字符数限制，留空表示使用默认限制</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="enableSegmentation">长文本处理</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="enableSegmentation" checked>
-                                <label class="form-check-label" for="enableSegmentation">
-                                    启用自动分段（超出长度限制时将文本分段处理）
-                                </label>
-                            </div>
-                            <small class="form-text text-muted">关闭后，超长文本将被截断而不是分段</small>
-                        </div>
-                        <button type="submit" class="btn btn-primary">保存API</button>
-                    </form>
-                    
-                    <hr>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h6 class="mb-0">已保存的自定义API</h6>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary" id="exportApisBtn" title="导出所有自定义API配置">
-                                <i class="fas fa-file-export"></i> 导出
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary" id="importApisBtn" title="导入自定义API配置">
-                                <i class="fas fa-file-import"></i> 导入
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-danger" id="batchDeleteBtn" style="display:none">
-                                <i class="fas fa-trash-alt"></i> 批量删除
-                            </button>
-                        </div>
                     </div>
-                    <div class="api-selection-tools mb-2" style="display:none">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="selectAllApis">
-                                <label class="form-check-label" for="selectAllApis">全选</label>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-danger" id="deleteSelectedBtn">删除选中</button>
-                                <button class="btn btn-sm btn-secondary" id="cancelSelectionBtn">取消</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="savedApisList" class="list-group mt-3">
-                        <!-- 动态加载已保存的API -->
-                    </div>
-                    
-                    <!-- 隐藏的文件输入用于导入 -->
-                    <input type="file" id="importApisInput" accept=".json" style="display:none">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+
+                <!-- 历史记录 -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden h-full flex flex-col">
+                        <div class="header-gradient px-6 py-4 text-white">
+                            <h2 class="text-xl font-bold flex items-center">
+                                <i class="fa fa-history mr-2"></i>
+                                历史记录
+                            </h2>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="relative">
+                                    <input type="text" id="historySearch" placeholder="搜索历史记录..." class="pl-9 pr-4 py-2 w-full bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-sm">
+                                    <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                </div>
+                                <button onclick="clearHistory()" class="text-red-500 hover:text-red-600 text-sm font-medium transition-colors">
+                                    <i class="fa fa-trash mr-1"></i> 清除全部
+                                </button>
+                            </div>
+                            <div id="historyItems" class="flex-grow overflow-y-auto space-y-3 max-h-[500px]">
+                                <!-- 历史记录项将通过JS动态添加 -->
+                                <div class="text-center py-10 text-gray-400">
+                                    <i class="fa fa-clock-o text-3xl mb-2"></i>
+                                    <p>暂无历史记录</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    
-
-    <!-- 在现有脚本引用前加入密码验证逻辑 -->
-    <script>
-        // 检查是否需要密码
-        fetch('/api/check-password')
-            .then(res => res.json())
-            .then(data => {
-                if (data.requirePassword && localStorage.getItem('authenticated') !== 'true') {
-                    document.getElementById('passwordModal').style.display = 'block';
-                }
-            })
-            .catch(err => {
-                console.error('检查密码需求失败', err);
-            });
+        <!-- 功能特点 -->
+        <section id="features" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">强大功能，满足您的需求</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">MiaoTTS提供了丰富的功能，帮助您创建高质量的语音内容，适用于各种场景。</p>
+            </div>
             
-        document.getElementById('passwordSubmit').addEventListener('click', function() {
-            const passValue = document.getElementById('passwordInput').value;
-            fetch('/api/verify-password', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ password: passValue })
-            })
-            .then(res => {
-                if (res.status === 200) return res.json();
-                else throw new Error('密码错误');
-            })
-            .then(result => {
-                if (result.valid) {
-                    localStorage.setItem('authenticated', 'true');
-                    document.getElementById('passwordModal').style.display = 'none';
-                }
-            })
-            .catch(error => {
-                const errBox = document.getElementById('passwordError');
-                errBox.style.display = 'block';
-                errBox.innerText = error.message;
-            });
-        });
-    </script>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 功能卡片 1 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-language text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">多语言支持</h3>
+                    <p class="text-gray-600">支持超过300种语言和方言，满足全球用户的需求，无论您需要哪种语言的语音，都能轻松实现。</p>
+                </div>
+                
+                <!-- 功能卡片 2 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-microphone text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">多种语音风格</h3>
+                    <p class="text-gray-600">提供丰富的语音选择，包括男声、女声、儿童声，以及不同情感和风格的语音，使您的内容更加生动。</p>
+                </div>
+                
+                <!-- 功能卡片 3 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-sliders text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">自定义语音参数</h3>
+                    <p class="text-gray-600">精确控制语速、语调、音量等参数，使生成的语音更加自然流畅，符合您的需求。</p>
+                </div>
+                
+                <!-- 功能卡片 4 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-cloud-upload text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">自定义API支持</h3>
+                    <p class="text-gray-600">支持连接自定义的TTS API，让您可以使用自己偏好的语音服务，扩展功能的可能性。</p>
+                </div>
+                
+                <!-- 功能卡片 5 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-clock-o text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">历史记录管理</h3>
+                    <p class="text-gray-600">自动保存您的语音生成历史，方便随时回顾和再次使用，提高工作效率。</p>
+                </div>
+                
+                <!-- 功能卡片 6 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-download text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">多格式导出</h3>
+                    <p class="text-gray-600">支持多种音频格式导出，包括MP3、WAV、Opus等，满足不同场景的需求。</p>
+                </div>
+            </div>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+        <!-- 使用指南 -->
+        <section id="guide" class="mb-16 bg-white rounded-xl shadow-card p-8">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">使用指南</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">简单几步，即可将文本转换为高质量的语音</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 步骤1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-primary font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">输入文本</h3>
+                    <p class="text-gray-600">在文本框中输入或粘贴您想要转换为语音的文本内容，可以是文章、故事、教程等任何文本。</p>
+                </div>
+                
+                <!-- 步骤2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-primary font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">选择语音</h3>
+                    <p class="text-gray-600">选择合适的API和语音风格，根据需要调整语速和语调，以获得最佳的语音效果。</p>
+                </div>
+                
+                <!-- 步骤3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-primary font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">生成并下载</h3>
+                    <p class="text-gray-600">点击"生成语音"按钮，等待片刻，然后点击下载按钮保存生成的语音文件到您的设备。</p>
+                </div>
+            </div>
+        </section>
 
-</body>
-</html>
+        <!-- 常见问题 -->
+        <section id="faq" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">常见问题</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">以下是用户经常问到的问题，如果您有其他疑问，请随时联系我们。</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ项1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left font-medium flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                            <span>MiaoTTS支持哪些语言？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 py-4 bg-gray-50 hidden">
+                            <p class="text-gray-600">MiaoTTS支持超过300种语言和方言，包括中文（普通话、粤语）、英语、日语、韩语、法语、德语、西班牙语等。您可以在语音选择下拉菜单中查看所有支持的语言。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ项2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left font-medium flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                            <span>生成的语音可以用于商业用途吗？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 py-4 bg-gray-50 hidden">
+                            <p class="text-gray-600">是的，您可以将生成的语音用于个人和商业项目。但是，如果您需要将语音用于大规模商业用途，建议查看具体API提供商的使用条款，以确保合规性。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ项3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left font-medium flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                            <span>如何保存我的语音设置？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 py-4 bg-gray-50 hidden">
+                            <p class="text-gray-600">MiaoTTS会自动保存您的API选择、语音风格、语速和语调设置。下次使用时，这些设置将保持不变。您还可以通过历史记录功能快速访问之前生成的语音。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ项4 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left font-medium flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                            <span>文本长度有限制吗？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform duration-30
